@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import facci.pm.CantosBrayan.taller.R;
 
 public class DetalleActivity extends AppCompatActivity {
-    private static final String URL_D = "http://10.22.29.171:3000/producto/";
+    private static final String URL_D = "http://10.22.24.176:3000/producto/";
     private ImageView imageView;
     private TextView nombre, precio, descripcion;
     private ProgressDialog progressDialog;

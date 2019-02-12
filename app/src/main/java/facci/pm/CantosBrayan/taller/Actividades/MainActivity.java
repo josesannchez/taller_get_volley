@@ -30,7 +30,7 @@ import facci.pm.CantosBrayan.taller.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String URL_P = "http://10.22.29.171:3000/productos";
+    private static final String URL_P = "http://10.22.24.176:3000/productos";
     private RecyclerView recyclerView;
     private ArrayList<Productos> productosArrayList;
     private ProgressDialog progressDialog;
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(MainActivity.this, IngresoActivity.class));
             }
         });
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         Productos productos = new Productos();
                         productos.setName(jsonObject.getString("name"));
                         productos.setDescripcion(jsonObject.getString("descripcion"));
-                        productos.setEstado(String.valueOf(jsonObject.getBoolean("estado")));
+                        productos.setEstado(jsonObject.getString("estado"));
                         productos.setFoto(jsonObject.getString("foto"));
                         productos.setMarca(jsonObject.getString("marca"));
                         productos.setPrecio(jsonObject.getString("precio"));
