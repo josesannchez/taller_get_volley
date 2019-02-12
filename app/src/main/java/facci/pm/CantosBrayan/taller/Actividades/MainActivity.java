@@ -1,10 +1,13 @@
 package facci.pm.CantosBrayan.taller.Actividades;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Productos> productosArrayList;
     private ProgressDialog progressDialog;
     private AdaptadorProductos adaptadorProductos;
+    private Button button;
 
 
     @Override
@@ -47,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading..");
         progressDialog.show();
         adaptadorProductos = new AdaptadorProductos(productosArrayList);
+        button = (Button)findViewById(R.id.BTNIngreso);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, IngresoActivity.class));
+            }
+        });
 
         DatosGenerales();
 
